@@ -20,6 +20,7 @@ const initialState = {
     loading: true,
     error: false,
     msg: false,
+    id: 0,
     items: [],
     options:{},
     history: [],

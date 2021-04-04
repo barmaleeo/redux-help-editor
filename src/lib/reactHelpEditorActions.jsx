@@ -95,6 +95,7 @@ export function saveBundle(bundle){
 export function undo(){
     return {type: REDUX_HELP_EDITOR_UNDO,}
 }
+
 export function redo(){
     return {type: REDUX_HELP_EDITOR_REDO,}
 }
@@ -106,9 +107,11 @@ export function editBundleParam(path, name, content){
 export function addCategory(path){
     return {type: REDUX_HELP_EDITOR_ADD_CATEGORY, payload:{path: path,}}
 }
+
 export function addItemImage(path, file, content){
     return {type: REDUX_HELP_EDITOR_ADD_ITEM_IMAGE, payload:{path: path, file:file, content: content}}
 }
+
 export function removeItemImage(path){
     return {type: REDUX_HELP_EDITOR_REMOVE_ITEM_IMAGE, payload:{path: path,}}
 }
@@ -117,9 +120,11 @@ export function removeEntity(path){
     const delPath = path.substring(0, path.length-1) + '-' + path.substring(path.length-1);
     return {type: REDUX_HELP_EDITOR_REMOVE_ENTITY, payload:{path: delPath,}}
 }
+
 export function hideCategory(path, hide){
     return {type: REDUX_HELP_EDITOR_HIDE_CATEGORY, payload:{path: path, hide: hide}}
 }
+
 export function addContent(path, type){
     return {type: REDUX_HELP_EDITOR_ADD_CONTENT, payload:{path: path, type: type}}
 }

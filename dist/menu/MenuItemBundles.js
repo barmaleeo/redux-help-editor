@@ -62,12 +62,15 @@ var MenuItemBundles = /*#__PURE__*/function (_PureComponent) {
       var p = this.props;
       var s = this.state;
       return /*#__PURE__*/_react.default.createElement(_MenuItemContainer.default, null, /*#__PURE__*/_react.default.createElement(MenuItemBundlesStyled, {
-        className: "",
+        className: p.className,
         value: p.bundle.id,
         onChange: function onChange(e) {
           p.onSelect(e.target.value);
         }
-      }, p.init.bundles.map(function (i) {
+      }, !(p.bundle.id > 0) && /*#__PURE__*/_react.default.createElement("option", {
+        key: 0,
+        value: 0
+      }, "\u041D\u0435 \u0432\u044B\u0431\u0440\u0430\u043D\u043E"), p.init.bundles.map(function (i) {
         return /*#__PURE__*/_react.default.createElement("option", {
           key: i.id,
           value: i.id

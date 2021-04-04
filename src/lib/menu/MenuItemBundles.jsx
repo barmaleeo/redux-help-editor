@@ -15,8 +15,9 @@ export default class MenuItemBundles extends PureComponent {
         const s = this.state;
         return (
             <MenuItemContainer>
-                <MenuItemBundlesStyled className="" value={p.bundle.id}
+                <MenuItemBundlesStyled className={p.className} value={p.bundle.id}
                                        onChange={e=> {p.onSelect(e.target.value)}}>
+                    {!(p.bundle.id > 0) && <option key={0} value={0}>Не выбрано</option>}
                     {p.init.bundles.map(i => (
                         <option key={i.id} value={i.id}>{i.options.name}</option>
                     ))}

@@ -64,17 +64,17 @@ window.$ = {
     get: (path, params, onSuccess)=>{
         let response;
         if(typeof onSuccess === 'function'){
-            if(path === 'help-editor/save-bundle') {
+            if(path === '/help-editor/save-bundle/') {
                 response = {
                     status: 'error',
                     msg: 'Debug Error',
                 }
-            }else if(path === 'help-editor/init') {
+            }else if(path === '/help-editor/init/') {
                 response = {
                     status:'ok',
                     bundles: bundles,
                 }
-            }else if(path === 'help-editor/select-bundle'){
+            }else if(path === '/help-editor/select-bundle/'){
                 for(const bd of bundleDeails){
                     if(+bd.id === +params.id ){
                         response = {
