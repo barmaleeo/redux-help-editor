@@ -27,11 +27,11 @@ export const REDUX_HELP_EDITOR_REDO    = 'REDUX_HELP_EDITOR_REDO';
 
 
 export function init(){
-    return ajaxGet('help-editor/init', REDUX_HELP_EDITOR_INIT_REQ, {});
+    return ajaxGet('/help-editor/init', REDUX_HELP_EDITOR_INIT_REQ, {});
 }
 
 export function selectBundle(bundleId){
-    return ajaxGet('help-editor/select-bundle', REDUX_HELP_EDITOR_SELECT_BUNDLE_REQ, {id: bundleId});
+    return ajaxGet('/help-editor/select-bundle', REDUX_HELP_EDITOR_SELECT_BUNDLE_REQ, {id: bundleId});
 }
 export function saveBundle(bundle){
 
@@ -64,7 +64,7 @@ export function saveBundle(bundle){
         dispatch({type:REDUX_HELP_EDITOR_SAVE_BUNDLE_REQ, payload:{params:params}});
         window.$.ajax({
             method:'POST',
-            url:'help-editor/save-bundle',
+            url:'/help-editor/save-bundle',
             processData:false,
             contentType: false,
             cache: false,
@@ -79,13 +79,13 @@ export function saveBundle(bundle){
                 }else{
                     dispatch({type:REDUX_HELP_EDITOR_SAVE_BUNDLE_ERR,
                         payload:{params:params, response:r.msg?r.msg:r}});
-                    console.log('catalog/save-product', r)
+                    console.log('/help-editor/save-bundle', r)
                 }
             },
             error:(e)=>{
                 dispatch({type:REDUX_HELP_EDITOR_SAVE_BUNDLE_ERR,
                     payload:{params:params, response:e.responseText}});
-                console.log('help-editor/save-bundle', e)
+                console.log('/help-editor/save-bundle', e)
             }
         })
     };

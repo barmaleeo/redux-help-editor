@@ -63,11 +63,11 @@ var REDUX_HELP_EDITOR_REDO = 'REDUX_HELP_EDITOR_REDO';
 exports.REDUX_HELP_EDITOR_REDO = REDUX_HELP_EDITOR_REDO;
 
 function init() {
-  return (0, _reduxAjaxGet.default)('help-editor/init', REDUX_HELP_EDITOR_INIT_REQ, {});
+  return (0, _reduxAjaxGet.default)('/help-editor/init', REDUX_HELP_EDITOR_INIT_REQ, {});
 }
 
 function selectBundle(bundleId) {
-  return (0, _reduxAjaxGet.default)('help-editor/select-bundle', REDUX_HELP_EDITOR_SELECT_BUNDLE_REQ, {
+  return (0, _reduxAjaxGet.default)('/help-editor/select-bundle', REDUX_HELP_EDITOR_SELECT_BUNDLE_REQ, {
     id: bundleId
   });
 }
@@ -107,7 +107,7 @@ function saveBundle(bundle) {
     });
     window.$.ajax({
       method: 'POST',
-      url: 'help-editor/save-bundle',
+      url: '/help-editor/save-bundle',
       processData: false,
       contentType: false,
       cache: false,
@@ -130,7 +130,7 @@ function saveBundle(bundle) {
               response: r.msg ? r.msg : r
             }
           });
-          console.log('catalog/save-product', r);
+          console.log('/help-editor/save-bundle', r);
         }
       },
       error: function error(e) {
@@ -141,7 +141,7 @@ function saveBundle(bundle) {
             response: e.responseText
           }
         });
-        console.log('help-editor/save-bundle', e);
+        console.log('/help-editor/save-bundle', e);
       }
     });
   };
