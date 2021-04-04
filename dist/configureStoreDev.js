@@ -15,7 +15,7 @@ var _reduxThunk = _interopRequireDefault(require("redux-thunk"));
 
 var _reduxLogger = require("redux-logger");
 
-var _DevTools = _interopRequireDefault(require("./components/DevTools.jsx"));
+var _DevTools = _interopRequireDefault(require("./components/DevTools"));
 
 var actions = _interopRequireWildcard(require("./reactHelpEditorActions"));
 
