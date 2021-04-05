@@ -81,7 +81,7 @@ export default class HelpItemPicture extends Component {
     onDrop = (e) => {
         if(e.dataTransfer.types.includes('Files')) {
             e.preventDefault()
-
+            e.persist();
             this.setState({active: false}, ()=>{
                 const files = e.dataTransfer.files;
                 //console.log('drop', e.dataTransfer.files);
