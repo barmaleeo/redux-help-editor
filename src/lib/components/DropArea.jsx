@@ -40,6 +40,7 @@ export default class DropArea extends Component {
     }
     onDrop = (e) => {
         e.preventDefault();
+        e.persist();
         this.setState({active: false}, ()=>{
             if(e.dataTransfer.getData("category")){
                 this.props.actions.addCategory( this.props.path )
