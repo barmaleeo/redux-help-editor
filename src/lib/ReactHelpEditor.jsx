@@ -7,6 +7,9 @@ import SaveControl from "./menu/SaveControl";
 import MenuItemAdd from "./menu/MenuItemAdd";
 
 const ReactHelpEditorStyled = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
     font-size: 18px;
   *{
     box-sizing: border-box;

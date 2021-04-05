@@ -51,7 +51,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ReactHelpEditorStyled = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    font-size: 18px;\n  *{\n    box-sizing: border-box;\n  }\n  button{\n    font-size: 13px;\n    line-height: normal;\n    border-radius: 2px;\n    border: 1px solid #777;\n  }\n\n"])));
+var ReactHelpEditorStyled = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n    font-size: 18px;\n  *{\n    box-sizing: border-box;\n  }\n  button{\n    font-size: 13px;\n    line-height: normal;\n    border-radius: 2px;\n    border: 1px solid #777;\n  }\n\n"])));
 
 var ReactHelpEditor = /*#__PURE__*/function (_PureComponent) {
   _inherits(ReactHelpEditor, _PureComponent);

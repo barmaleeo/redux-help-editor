@@ -30,11 +30,17 @@ const HelpCategoryStyled = styled.div`
       button{
         display: inline-block;
         margin-right: 5px;
-        i.hidden{
+        i.rotated{
           transform: rotate(180deg);
         }
       }
     }
+  }
+  .hc-items-container{
+    padding-bottom: 10px;
+  }
+  .hc-inner-container{
+    padding-bottom: 10px;
   }
 `;
 
@@ -72,11 +78,11 @@ export default class HelpCategory extends Component {
                             <i className="fas fa-trash-alt"/>
                         </button>
                         <button onClick={p.actions.hideCategory.bind(this, p.path, !c.hide)}>
-                            <i className={'fas fa-chevron-down' +(c.hide ? ' hidden':'')}/>
+                            <i className={'fas fa-chevron-down' +(c.hide ? ' rotated':'')}/>
                         </button>
                     </div>
                 </div>
-                <div>
+                <div className="hc-inner-container">
                     {cats.map((i,k) => (i.delimiter ?
                         <DropArea key={k} path={p.path+'.children.+' + catN}
                                   token={['category']} actions={p.actions}/>:
@@ -84,7 +90,7 @@ export default class HelpCategory extends Component {
                                       category={i} ihit={p.init} actions={p.actions}/>
                     ))}
                 </div>
-                <div>
+                <div className="hc-items-container">
                     {items.map((i,k) => (i.delimiter ?
                         <DropArea key={k} path={p.path+'.items.+' + itemN}
                                   token={['contenttext', 'contentpicture']} actions={p.actions}/>:

@@ -5,6 +5,8 @@ import EditableText from "../components/EditableText";
 import DropArea from "../components/DropArea";
 
 const WorkAreaStyled = styled.div`
+    flex: 1;
+  overflow-y: auto;
     background: beige;
     width: 100%;
     height: 100%;
