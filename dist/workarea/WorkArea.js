@@ -55,7 +55,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var WorkAreaStyled = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: beige;\n    width: 100%;\n    height: 100%;\n    padding: 5px 15px;\n"])));
+var WorkAreaStyled = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    flex: 1;\n  overflow-y: auto;\n    background: beige;\n    width: 100%;\n    height: 100%;\n    padding: 5px 15px;\n"])));
 
 var WorkArea = /*#__PURE__*/function (_PureComponent) {
   _inherits(WorkArea, _PureComponent);
