@@ -101,6 +101,7 @@ var DropArea = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "onDrop", function (e) {
       e.preventDefault();
+      e.persist();
 
       _this.setState({
         active: false
