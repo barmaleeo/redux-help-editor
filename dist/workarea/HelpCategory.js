@@ -166,7 +166,7 @@ var HelpCategory = /*#__PURE__*/function (_Component) {
           key: k,
           path: p.path + '.children.' + catN++,
           category: i,
-          ihit: p.init,
+          init: p.init,
           actions: p.actions
         });
       })), /*#__PURE__*/_react.default.createElement("div", {
@@ -181,7 +181,7 @@ var HelpCategory = /*#__PURE__*/function (_Component) {
           key: k,
           path: p.path + '.items.' + itemN++,
           item: i,
-          ihit: p.init,
+          init: p.init,
           actions: p.actions
         });
       })));

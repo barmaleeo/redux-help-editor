@@ -87,7 +87,7 @@ export default class HelpCategory extends Component {
                         <DropArea key={k} path={p.path+'.children.+' + catN}
                                   token={['category']} actions={p.actions}/>:
                         <HelpCategory key={k} path={p.path+'.children.'+(catN++)}
-                                      category={i} ihit={p.init} actions={p.actions}/>
+                                      category={i} init={p.init} actions={p.actions}/>
                     ))}
                 </div>
                 <div className="hc-items-container">
@@ -95,7 +95,7 @@ export default class HelpCategory extends Component {
                         <DropArea key={k} path={p.path+'.items.+' + itemN}
                                   token={['contenttext', 'contentpicture']} actions={p.actions}/>:
                         <HelpItem key={k} path={p.path+'.items.'+ (itemN++)}
-                                  item={i} ihit={p.init} actions={p.actions}/>
+                                  item={i} init={p.init} actions={p.actions}/>
                     ))}
                 </div>
             </HelpCategoryStyled>

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports.default = initReducer;
 
 var _reactHelpEditorActions = require("../reactHelpEditorActions");
 
@@ -17,10 +17,11 @@ var initialState = {
   loading: true,
   error: false,
   msg: false,
+  imageUrl: 'help-images',
   bundles: []
 };
 
-function _default() {
+function initReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
   var pl = action.payload;
@@ -39,8 +40,7 @@ function _default() {
 
     case _reactHelpEditorActions.REDUX_HELP_EDITOR_INIT_DONE:
       {
-        ns = _objectSpread(_objectSpread({}, ns), {}, {
-          bundles: pl.response.bundles,
+        ns = _objectSpread(_objectSpread(_objectSpread({}, ns), pl.response), {}, {
           loading: false
         });
         break;
