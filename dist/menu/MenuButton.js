@@ -43,7 +43,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var MenuButtonStyled = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    //font-size: 20px;\n  margin-right: 2px;\n  width: 30px;\n"])));
+var MenuButtonStyled = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    //font-size: 20px;\n  margin-right: 2px;\n  width: 30px;\n  &:disabled{\n    cursor: not-allowed;\n    opacity: 0.65;\n    box-shadow: none;\n  }\n"])));
 
 var MenuButton = /*#__PURE__*/function (_PureComponent) {
   _inherits(MenuButton, _PureComponent);

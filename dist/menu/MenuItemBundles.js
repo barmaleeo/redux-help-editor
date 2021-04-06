@@ -59,8 +59,8 @@ var MenuItemBundles = /*#__PURE__*/function (_PureComponent) {
   _createClass(MenuItemBundles, [{
     key: "render",
     value: function render() {
-      var p = this.props;
-      var s = this.state;
+      var p = this.props; //const s = this.state;
+
       return /*#__PURE__*/_react.default.createElement(_MenuItemContainer.default, null, /*#__PURE__*/_react.default.createElement(MenuItemBundlesStyled, {
         className: p.className,
         value: p.bundle.id,
