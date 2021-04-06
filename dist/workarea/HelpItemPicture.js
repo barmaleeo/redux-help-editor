@@ -98,6 +98,7 @@ var HelpItemPicture = /*#__PURE__*/function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "onDrop", function (e) {
       if (e.dataTransfer.types.includes('Files')) {
         e.preventDefault();
+        e.persist();
 
         _this.setState({
           active: false
