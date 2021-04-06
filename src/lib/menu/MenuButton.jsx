@@ -5,6 +5,11 @@ const MenuButtonStyled = styled.button`
     //font-size: 20px;
   margin-right: 2px;
   width: 30px;
+  &:disabled{
+    cursor: not-allowed;
+    opacity: 0.65;
+    box-shadow: none;
+  }
 `;
 
 

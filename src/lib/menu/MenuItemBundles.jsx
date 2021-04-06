@@ -12,7 +12,7 @@ const MenuItemBundlesStyled = styled.select`
 export default class MenuItemBundles extends PureComponent {
     render() {
         const p = this.props;
-        const s = this.state;
+        //const s = this.state;
         return (
             <MenuItemContainer>
                 <MenuItemBundlesStyled className={p.className} value={p.bundle.id}
