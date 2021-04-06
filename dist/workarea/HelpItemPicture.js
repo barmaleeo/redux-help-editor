@@ -141,8 +141,8 @@ var HelpItemPicture = /*#__PURE__*/function (_Component) {
 
       if (i.options.unsaved) {
         url = i.options.unsaved.content;
-      } else if (i.options.url) {
-        url = i.options.url;
+      } else {
+        url = p.init.imageUrl + i.id;
       }
 
       return /*#__PURE__*/_react.default.createElement(HelpItemPictureStyled, {

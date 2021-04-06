@@ -72,6 +72,7 @@ window.$ = {
             }else if(path === '/help-editor/init/') {
                 response = {
                     status:'ok',
+                    imageUrl: '/help-item/',
                     bundles: bundles,
                 }
             }else if(path === '/help-editor/select-bundle/'){

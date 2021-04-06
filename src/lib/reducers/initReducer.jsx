@@ -8,10 +8,11 @@ const initialState = {
     loading: true,
     error: false,
     msg: false,
+    imageUrl: 'help-images',
     bundles: [],
 };
 
-export default function (state = initialState, action) {
+export default function initReducer (state = initialState, action) {
     const pl = action.payload;
     let ns = state;
     switch (action.type) {
@@ -20,7 +21,7 @@ export default function (state = initialState, action) {
             break;
         }
         case REDUX_HELP_EDITOR_INIT_DONE:{
-            ns = {...ns,  bundles: pl.response.bundles, loading: false,};
+            ns = {...ns,  ...pl.response, loading: false,};
             break;
         }
         case REDUX_HELP_EDITOR_INIT_ERR:{

@@ -111,8 +111,8 @@ export default class HelpItemPicture extends Component {
         let url;
         if(i.options.unsaved){
             url = i.options.unsaved.content;
-        }else if(i.options.url){
-            url = i.options.url
+        }else {
+            url = p.init.imageUrl + i.id
         }
         return (
             <HelpItemPictureStyled className="">
