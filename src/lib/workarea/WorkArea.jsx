@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import HelpCategory from "./HelpCategory";
 import EditableText from "../components/EditableText";
 import DropArea from "../components/DropArea";
+import Progress from "../components/Progress";
 
 const WorkAreaStyled = styled.div`
     flex: 1;
@@ -38,7 +39,8 @@ export default class WorkArea extends PureComponent {
                    <DropArea key={k} token={['category']} path={'children.+' + catN}  actions={p.actions}/>:
                     <HelpCategory key={k} path={"children."+(catN++)} category={i} init={p.init} actions={p.actions}/>
                 ))}
-
+                {p.bundle.saveProgress && <Progress content="Сохраняем..."/>}
+                {p.bundle.loading && <Progress content="Загружаем..."/>}
             </WorkAreaStyled>
         )
     }

@@ -17,7 +17,7 @@ import {
 
 
 const initialState = {
-    loading: true,
+    loading: false,
     error: false,
     msg: false,
     id: 0,

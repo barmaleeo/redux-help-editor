@@ -16,7 +16,8 @@ export default class SaveControl extends Component {
                 <MenuButton icon="fas fa-file"/>
                 <MenuButton icon="fas fa-undo" disabled={b.historyPoint < 0} onClick={p.actions.undo}/>
                 <MenuButton icon="fas fa-redo" disabled={h.length <= b.historyPoint+1} onClick={p.actions.redo}/>
-                <MenuButton icon="fas fa-save" onClick={p.actions.saveBundle.bind(this, p.bundle)}/>
+                <MenuButton icon="fas fa-save" onClick={p.actions.saveBundle.bind(this, p.bundle)}
+                            disabled={!(p.bundle.id>0)}/>
 
             </MenuItemContainer>
         )

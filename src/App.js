@@ -101,7 +101,7 @@ window.$ = {
     ajax: async (config)=> {
         let response;
         if(typeof config.success === 'function'){
-            if(config.url === 'help-editor/save-bundle') {
+            if(config.url === '/help-editor/save-bundle/') {
 
                 const object = Array.from(config.data).reduce((o, [k, v]) => {
                     let a = v,
