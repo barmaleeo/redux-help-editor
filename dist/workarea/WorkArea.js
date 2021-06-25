@@ -17,6 +17,8 @@ var _EditableText = _interopRequireDefault(require("../components/EditableText")
 
 var _DropArea = _interopRequireDefault(require("../components/DropArea"));
 
+var _Progress = _interopRequireDefault(require("../components/Progress"));
+
 var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -131,6 +133,10 @@ var WorkArea = /*#__PURE__*/function (_PureComponent) {
           init: p.init,
           actions: p.actions
         });
+      }), p.bundle.saveProgress && /*#__PURE__*/_react.default.createElement(_Progress.default, {
+        content: "\u0421\u043E\u0445\u0440\u0430\u043D\u044F\u0435\u043C..."
+      }), p.bundle.loading && /*#__PURE__*/_react.default.createElement(_Progress.default, {
+        content: "\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u043C..."
       }));
     }
   }]);

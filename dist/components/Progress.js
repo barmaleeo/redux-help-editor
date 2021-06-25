@@ -9,9 +9,9 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _MenuItemContainer = _interopRequireDefault(require("../components/MenuItemContainer"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _MenuButton = _interopRequireDefault(require("./MenuButton"));
+var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39,43 +39,35 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var SaveControl = /*#__PURE__*/function (_Component) {
-  _inherits(SaveControl, _Component);
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-  var _super = _createSuper(SaveControl);
+var ProgressStyled = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  position: absolute;\n  top:0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(0,0,0,0.2);\n  z-index: 1000000;\n"])));
 
-  function SaveControl() {
-    _classCallCheck(this, SaveControl);
+var Progress = /*#__PURE__*/function (_Component) {
+  _inherits(Progress, _Component);
+
+  var _super = _createSuper(Progress);
+
+  function Progress() {
+    _classCallCheck(this, Progress);
 
     return _super.apply(this, arguments);
   }
 
-  _createClass(SaveControl, [{
+  _createClass(Progress, [{
     key: "render",
     value: function render() {
+      var _p$content;
+
       var p = this.props;
       var s = this.state;
-      var b = p.bundle;
-      var h = b.history;
-      return /*#__PURE__*/_react.default.createElement(_MenuItemContainer.default, null, /*#__PURE__*/_react.default.createElement(_MenuButton.default, {
-        icon: "fas fa-file"
-      }), /*#__PURE__*/_react.default.createElement(_MenuButton.default, {
-        icon: "fas fa-undo",
-        disabled: b.historyPoint < 0,
-        onClick: p.actions.undo
-      }), /*#__PURE__*/_react.default.createElement(_MenuButton.default, {
-        icon: "fas fa-redo",
-        disabled: h.length <= b.historyPoint + 1,
-        onClick: p.actions.redo
-      }), /*#__PURE__*/_react.default.createElement(_MenuButton.default, {
-        icon: "fas fa-save",
-        onClick: p.actions.saveBundle.bind(this, p.bundle),
-        disabled: !(p.bundle.id > 0)
-      }));
+      return /*#__PURE__*/_react.default.createElement(ProgressStyled, {
+        className: ""
+      }, (_p$content = p.content) !== null && _p$content !== void 0 ? _p$content : 'МИНУТОЧКУ...');
     }
   }]);
 
-  return SaveControl;
+  return Progress;
 }(_react.Component);
 
-exports.default = SaveControl;
+exports.default = Progress;
