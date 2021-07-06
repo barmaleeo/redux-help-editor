@@ -77,8 +77,8 @@ export default class HelpCategory extends Component {
                     <EditableText className="hc-n-name" item={c} name="name"
                                   actions={p.actions} path={p.path}/>
                     <div className="hc-n-buttons">
-                        <button onClick={p.actions.disableEntity.bind(this, p.path, !c.disabled)}>
-                            <i className={'fas fa-ban'+(c.disabled ? ' btn-disabled':'')}/>
+                        <button onClick={p.actions.disableEntity.bind(this, p.path, +c.disabled===1?0:1)}>
+                            <i className={'fas fa-ban'+(+c.disabled === 1 ? ' btn-disabled':'')}/>
                         </button>
                         <button onClick={p.actions.removeEntity.bind(this, p.path)}>
                             <i className="fas fa-trash-alt"/>
