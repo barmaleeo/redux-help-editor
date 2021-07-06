@@ -33,6 +33,9 @@ const HelpCategoryStyled = styled.div`
         i.rotated{
           transform: rotate(180deg);
         }
+        i.btn-disabled{
+          color: red;
+        }
       }
     }
   }
@@ -74,6 +77,9 @@ export default class HelpCategory extends Component {
                     <EditableText className="hc-n-name" item={c} name="name"
                                   actions={p.actions} path={p.path}/>
                     <div className="hc-n-buttons">
+                        <button onClick={p.actions.disableEntity.bind(this, p.path, !c.disabled)}>
+                            <i className={'fas fa-ban'+(c.disabled ? ' btn-disabled':'')}/>
+                        </button>
                         <button onClick={p.actions.removeEntity.bind(this, p.path)}>
                             <i className="fas fa-trash-alt"/>
                         </button>

@@ -2,7 +2,7 @@ import changeNestedParam from "change-nested-param";
 import {
     REDUX_HELP_EDITOR_ADD_CATEGORY,
     REDUX_HELP_EDITOR_ADD_CONTENT,
-    REDUX_HELP_EDITOR_ADD_ITEM_IMAGE,
+    REDUX_HELP_EDITOR_ADD_ITEM_IMAGE, REDUX_HELP_EDITOR_DISABLE_ENTITY,
     REDUX_HELP_EDITOR_EDIT_BUNDLE_PARAM,
     REDUX_HELP_EDITOR_HIDE_CATEGORY, REDUX_HELP_EDITOR_REDO,
     REDUX_HELP_EDITOR_REMOVE_ENTITY,
@@ -66,6 +66,11 @@ export default function bundleReducer (state = initialState, action) {
         }
         case REDUX_HELP_EDITOR_REMOVE_ENTITY:{
             ns = changeNestedParam(ns, pl.path)
+            addHistory(ns, state)
+            break;
+        }
+        case REDUX_HELP_EDITOR_DISABLE_ENTITY:{
+            ns = changeNestedParam(ns, pl.path+'.disabled', pl.disabled)
             addHistory(ns, state)
             break;
         }

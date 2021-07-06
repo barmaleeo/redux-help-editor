@@ -17,6 +17,7 @@ export const REDUX_HELP_EDITOR_SAVE_BUNDLE_ERR    = 'REDUX_HELP_EDITOR_SAVE_BUND
 export const REDUX_HELP_EDITOR_EDIT_BUNDLE_PARAM    = 'REDUX_HELP_EDITOR_EDIT_BUNDLE_PARAM';
 export const REDUX_HELP_EDITOR_ADD_CATEGORY         = 'REDUX_HELP_EDITOR_ADD_CATEGORY';
 export const REDUX_HELP_EDITOR_HIDE_CATEGORY        = 'REDUX_HELP_EDITOR_HIDE_CATEGORY';
+export const REDUX_HELP_EDITOR_DISABLE_ENTITY       = 'REDUX_HELP_EDITOR_DISABLE_ENTITY';
 export const REDUX_HELP_EDITOR_REMOVE_ENTITY        = 'REDUX_HELP_EDITOR_REMOVE_ENTITY';
 export const REDUX_HELP_EDITOR_ADD_CONTENT          = 'REDUX_HELP_EDITOR_ADD_CONTENT';
 export const REDUX_HELP_EDITOR_ADD_ITEM_IMAGE       = 'REDUX_HELP_EDITOR_ADD_ITEM_IMAGE';
@@ -119,6 +120,9 @@ export function removeItemImage(path){
 export function removeEntity(path){
     const delPath = path.substring(0, path.length-1) + '-' + path.substring(path.length-1);
     return {type: REDUX_HELP_EDITOR_REMOVE_ENTITY, payload:{path: delPath,}}
+}
+export function disableEntity(path, disabled){
+    return {type: REDUX_HELP_EDITOR_DISABLE_ENTITY, payload:{path: path, disabled: disabled}}
 }
 
 export function hideCategory(path, hide){
