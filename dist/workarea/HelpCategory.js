@@ -147,9 +147,9 @@ var HelpCategory = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "hc-n-buttons"
       }, /*#__PURE__*/_react.default.createElement("button", {
-        onClick: p.actions.disableEntity.bind(this, p.path, !c.disabled)
+        onClick: p.actions.disableEntity.bind(this, p.path, +c.disabled === 1 ? 0 : 1)
       }, /*#__PURE__*/_react.default.createElement("i", {
-        className: 'fas fa-ban' + (c.disabled ? ' btn-disabled' : '')
+        className: 'fas fa-ban' + (+c.disabled === 1 ? ' btn-disabled' : '')
       })), /*#__PURE__*/_react.default.createElement("button", {
         onClick: p.actions.removeEntity.bind(this, p.path)
       }, /*#__PURE__*/_react.default.createElement("i", {
