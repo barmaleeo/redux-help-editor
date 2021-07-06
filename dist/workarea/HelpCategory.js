@@ -55,7 +55,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var HelpCategoryStyled = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  //padding:5px;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  background: #e6f5ff;\n  margin-left: 15px;\n  width: calc(100% - 20px);\n  .hc-name-container{\n    background: #eee;\n    display: flex;\n    align-items: flex-start;\n    border-bottom: 1px solid #ccc;\n    .hc-n-name{\n      flex: 1;\n      margin-left: 15px;\n      min-height: 30px;\n      line-height: 30px;\n      padding-right: 15px;\n      border-right: 1px solid #ccc;\n    }\n    .hc-n-buttons{\n      padding-left: 5px;\n      line-height: 28px;\n      button{\n        display: inline-block;\n        margin-right: 5px;\n        i.rotated{\n          transform: rotate(180deg);\n        }\n      }\n    }\n  }\n  .hc-items-container{\n    padding-bottom: 10px;\n  }\n  .hc-inner-container{\n    padding-bottom: 10px;\n  }\n"])));
+var HelpCategoryStyled = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  //padding:5px;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  background: #e6f5ff;\n  margin-left: 15px;\n  width: calc(100% - 20px);\n  .hc-name-container{\n    background: #eee;\n    display: flex;\n    align-items: flex-start;\n    border-bottom: 1px solid #ccc;\n    .hc-n-name{\n      flex: 1;\n      margin-left: 15px;\n      min-height: 30px;\n      line-height: 30px;\n      padding-right: 15px;\n      border-right: 1px solid #ccc;\n    }\n    .hc-n-buttons{\n      padding-left: 5px;\n      line-height: 28px;\n      button{\n        display: inline-block;\n        margin-right: 5px;\n        i.rotated{\n          transform: rotate(180deg);\n        }\n        i.btn-disabled{\n          color: red;\n        }\n      }\n    }\n  }\n  .hc-items-container{\n    padding-bottom: 10px;\n  }\n  .hc-inner-container{\n    padding-bottom: 10px;\n  }\n"])));
 
 var HelpCategory = /*#__PURE__*/function (_Component) {
   _inherits(HelpCategory, _Component);
@@ -147,6 +147,10 @@ var HelpCategory = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/_react.default.createElement("div", {
         className: "hc-n-buttons"
       }, /*#__PURE__*/_react.default.createElement("button", {
+        onClick: p.actions.disableEntity.bind(this, p.path, !c.disabled)
+      }, /*#__PURE__*/_react.default.createElement("i", {
+        className: 'fas fa-ban' + (c.disabled ? ' btn-disabled' : '')
+      })), /*#__PURE__*/_react.default.createElement("button", {
         onClick: p.actions.removeEntity.bind(this, p.path)
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fas fa-trash-alt"

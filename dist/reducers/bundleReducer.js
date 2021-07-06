@@ -113,6 +113,13 @@ function bundleReducer() {
         break;
       }
 
+    case _reactHelpEditorActions.REDUX_HELP_EDITOR_DISABLE_ENTITY:
+      {
+        ns = (0, _changeNestedParam.default)(ns, pl.path + '.disabled', pl.disabled);
+        addHistory(ns, state);
+        break;
+      }
+
     case _reactHelpEditorActions.REDUX_HELP_EDITOR_ADD_ITEM_IMAGE:
       {
         ns = (0, _changeNestedParam.default)(ns, pl.path + '.options.unsaved', {
