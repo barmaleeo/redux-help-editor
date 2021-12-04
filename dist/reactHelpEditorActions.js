@@ -203,7 +203,8 @@ function removeItemImage(path) {
 }
 
 function removeEntity(path) {
-  var delPath = path.substring(0, path.length - 1) + '-' + path.substring(path.length - 1);
+  var li = path.lastIndexOf('.') + 1;
+  var delPath = path.substring(0, li) + '-' + path.substring(li);
   return {
     type: REDUX_HELP_EDITOR_REMOVE_ENTITY,
     payload: {

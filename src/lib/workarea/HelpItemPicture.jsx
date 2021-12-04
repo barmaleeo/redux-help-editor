@@ -109,7 +109,7 @@ export default class HelpItemPicture extends Component {
         const s = this.state;
         const i = p.item;
         let url;
-        if(i.options.unsaved){
+        if(typeof i.options.unsaved === 'object'){
             url = i.options.unsaved.content;
         }else {
             url = '/' +p.init.imageUrl + '/' + i.id
